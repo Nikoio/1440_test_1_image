@@ -1,0 +1,56 @@
+[
+  {
+    "filename": "center",
+    "std": 9.60725989095793,
+    "dispersion": 92.29944261240898,
+    "position": [
+      0,
+      0
+    ]
+  },
+  {
+    "filename": "dot",
+    "std": 0.0,
+    "dispersion": 0.0,
+    "position": [
+      0,
+      0
+    ]
+  },
+  {
+    "filename": "empty",
+    "std": null,
+    "dispersion": null,
+    "position": [
+      null,
+      null
+    ]
+  },
+  {
+    "filename": "plane",
+    "std": 70.0053569151084,
+    "dispersion": 4900.7499968117145,
+    "position": [
+      -1,
+      1
+    ]
+  },
+  {
+    "filename": "x_shifted",
+    "std": 9.60725989095793,
+    "dispersion": 92.29944261240898,
+    "position": [
+      25,
+      0
+    ]
+  },
+  {
+    "filename": "y_shifted",
+    "std": 9.60725989095793,
+    "dispersion": 92.29944261240898,
+    "position": [
+      0,
+      25
+    ]
+  }
+]

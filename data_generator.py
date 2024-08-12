@@ -3,7 +3,7 @@ import numpy as np
 from pathlib import Path
 import yaml
 
-def gauss_spot(x0, y0, std, width = 100, height = 100):
+def draw_gauss_spot(x0, y0, std, width = 100, height = 100):
     """
     Создает массив, содержащий значения пикселей для Гауссовго пятна.
 
@@ -54,7 +54,7 @@ def generate_image_from_yaml(path):
     sigma = parameters['std']
     x0, y0 = parameters['position']
 
-    cv2.imwrite(path.parent / f'{path.stem}.png', gauss_spot(x0, y0, sigma))
+    cv2.imwrite(path.parent / f'{path.stem}.png', draw_gauss_spot(x0, y0, sigma))
 
 
 def get_input(message):
@@ -103,7 +103,7 @@ if input('Создать новый тест-кейс (\'y\' если да)? ') 
         with open(f'Test Data/{name}.yaml', 'w') as f:
             yaml.safe_dump(to_yaml, f, sort_keys=False)
 
-        cv2.imwrite(f'Test Data/{name}.png', gauss_spot(x0, y0, std))
+        cv2.imwrite(f'Test Data/{name}.png', draw_gauss_spot(x0, y0, std))
 
         if input('Создать новый файл параметров (\'y\' если да)?') != 'y':
             print('Завершаю работу.')

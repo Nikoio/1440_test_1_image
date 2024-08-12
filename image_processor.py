@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 
-def spot_parameters(path):
+def find_spot_parameters(path):
     """
     Рассчитывает параметры пятна на иображении (координаты центра, размер)
 
@@ -53,3 +53,4 @@ def spot_parameters(path):
         return {'std': None, 
                 'dispersion': None,
                 'position': [None, None]}
+    
