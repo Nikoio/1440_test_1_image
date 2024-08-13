@@ -19,7 +19,7 @@
     },
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.748007"
+    "timestamp": "2024-08-13T15:40:59.907188"
   },
   {
     "test_type": "test_empty[center]",
@@ -27,7 +27,7 @@
     "expected_output": 0.0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.750002"
+    "timestamp": "2024-08-13T15:40:59.910340"
   },
   {
     "test_type": "test_empty[x_shifted]",
@@ -35,7 +35,7 @@
     "expected_output": 25,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.752993"
+    "timestamp": "2024-08-13T15:40:59.912334"
   },
   {
     "test_type": "test_empty[y_shifted]",
@@ -43,7 +43,7 @@
     "expected_output": 0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.754988"
+    "timestamp": "2024-08-13T15:40:59.915327"
   },
   {
     "test_type": "test_empty[center]",
@@ -51,7 +51,7 @@
     "expected_output": 0.0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.756983"
+    "timestamp": "2024-08-13T15:40:59.917321"
   },
   {
     "test_type": "test_empty[x_shifted]",
@@ -59,7 +59,7 @@
     "expected_output": 0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.758978"
+    "timestamp": "2024-08-13T15:40:59.919316"
   },
   {
     "test_type": "test_empty[y_shifted]",
@@ -67,7 +67,7 @@
     "expected_output": 25,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.760992"
+    "timestamp": "2024-08-13T15:40:59.921311"
   },
   {
     "test_type": "test_empty[center]",
@@ -75,7 +75,7 @@
     "expected_output": 10.0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.763964"
+    "timestamp": "2024-08-13T15:40:59.923810"
   },
   {
     "test_type": "test_empty[dot]",
@@ -83,7 +83,7 @@
     "expected_output": 0.01,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.765959"
+    "timestamp": "2024-08-13T15:40:59.925805"
   },
   {
     "test_type": "test_empty[plane]",
@@ -91,7 +91,7 @@
     "expected_output": 100.0,
     "result": "fail",
     "error_message": "Среднеквадратичные отклонения не совпадают с достатчной точностью (95.0% либо разница <0.05)\nassert np.False_",
-    "timestamp": "2024-08-13T15:25:52.767954"
+    "timestamp": "2024-08-13T15:40:59.928798"
   },
   {
     "test_type": "test_empty[center]",
@@ -99,7 +99,7 @@
     "expected_output": 100.0,
     "result": "fail",
     "error_message": "Дисперсии не совпадают с достатчной точностью (95.0% либо разница <0.05)\nassert np.False_",
-    "timestamp": "2024-08-13T15:25:52.818848"
+    "timestamp": "2024-08-13T15:40:59.980694"
   },
   {
     "test_type": "test_empty[dot]",
@@ -107,7 +107,7 @@
     "expected_output": 0.0001,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.823805"
+    "timestamp": "2024-08-13T15:40:59.985646"
   },
   {
     "test_type": "test_empty[plane]",
@@ -115,7 +115,7 @@
     "expected_output": 10000.0,
     "result": "fail",
     "error_message": "Дисперсии не совпадают с достатчной точностью (95.0% либо разница <0.05)\nassert np.False_",
-    "timestamp": "2024-08-13T15:25:52.826796"
+    "timestamp": "2024-08-13T15:40:59.987666"
   },
   {
     "test_type": "test_empty[center]",
@@ -123,7 +123,7 @@
     "expected_output": "var == sigma**2",
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.831783"
+    "timestamp": "2024-08-13T15:40:59.993650"
   },
   {
     "test_type": "test_empty[dot]",
@@ -131,7 +131,7 @@
     "expected_output": "var == sigma**2",
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.833778"
+    "timestamp": "2024-08-13T15:40:59.995645"
   },
   {
     "test_type": "test_empty[plane]",
@@ -139,6 +139,6 @@
     "expected_output": "var == sigma**2",
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-13T15:25:52.836770"
+    "timestamp": "2024-08-13T15:40:59.997069"
   }
 ]

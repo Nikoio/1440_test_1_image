@@ -1,13 +1,13 @@
 import json
 
-from image_processor import spot_parameters
+from image_processor import find_spot_parameters
 from pathlib import Path
 
 results = []
 
 pathlist = Path('./Test Data').glob('**/*.png')
 for path in pathlist:
-    parameters = spot_parameters(path)
+    parameters = find_spot_parameters(path)
 
     results.append({
         'filename': path.stem,

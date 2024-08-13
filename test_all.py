@@ -54,7 +54,7 @@ def test_empty(get_parameters):
     test_condition = expected_output == actual_output
     error_message = 'Значения не равны None'
 
-    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
+    tests_results.append(make_summary(test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -82,7 +82,7 @@ def test_position_x(get_parameters):
     test_condition = expected_output == actual_output
     error_message = 'Координаты X не совпадают'
 
-    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
+    tests_results.append(make_summary(test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -110,7 +110,7 @@ def test_position_y(get_parameters):
     test_condition = expected_output == actual_output
     error_message = 'Координаты Y не совпадают'
 
-    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
+    tests_results.append(make_summary(test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -143,7 +143,7 @@ def test_std(get_parameters, accuracy):
                         (expected_output - actual_output) <= (1 - accuracy_value))
     error_message = f'Среднеквадратичные отклонения не совпадают с достатчной точностью ({accuracy_value*100}% либо разница <0.05)'
     
-    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
+    tests_results.append(make_summary(test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -176,7 +176,7 @@ def test_dispersion(get_parameters, accuracy):
                         (expected_output - actual_output) <= (1 - accuracy_value))
     error_message = f'Дисперсии не совпадают с достатчной точностью ({accuracy_value*100}% либо разница <0.05)'
 
-    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
+    tests_results.append(make_summary(test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -206,5 +206,5 @@ def test_std_dispersion_congruence(get_parameters):
     test_condition = actual_output
     error_message = f'Дисперсия пятна не равна квадрату его среднеквадратичного отклонения'
 
-    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
+    tests_results.append(make_summary(test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message

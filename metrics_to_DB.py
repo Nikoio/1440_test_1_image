@@ -2,7 +2,7 @@ import os
 from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 
-from image_processor import spot_parameters
+from image_processor import find_spot_parameters
 from pathlib import Path
 
 token = os.environ.get("INFLUXDB_TOKEN")
@@ -15,7 +15,7 @@ write_api = client.write_api(write_options=SYNCHRONOUS)
    
 pathlist = Path('./Test Data').glob('**/*.png')
 for path in pathlist:
-    parameters = spot_parameters(path)
+    parameters = find_spot_parameters(path)
 
     point = Point("spot_metrics")
     point.tag("filename", path.stem)
