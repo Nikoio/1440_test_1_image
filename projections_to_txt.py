@@ -3,6 +3,16 @@ import numpy as np
 from pathlib import Path
 
 def find_projections(path):
+    """
+    Рассчитывает проекции знчений пикселей изображения на оси X, Y.
+
+    Аргументы:
+    path -- путь до изображения
+
+    Возвращает:
+    Словарь со значениями проекций на ось X и ось Y
+    
+    """
     img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 
     projection_x = np.sum(img, axis=0)
