@@ -1,8 +1,39 @@
 import pytest
 from datetime import datetime
 
-from conftest import results
+from conftest import tests_results
 
+def make_summary(test_condition, error_message, filename, actual_output, expected_output):
+    """
+    Составляет отчет по тесту для отправки в json-файл.
+
+    Аргументы:
+    test_condition -- условие, проверяемое тестом, 
+    error_message -- сообщение в случае ошибки, 
+    filename -- название файла с тест-кейсом, 
+    actual_output -- фактический результат проверяемой функции, 
+    expected_output -- ожидаемый результат проверяемой функции
+
+    Возвращает:
+    Словарь с результатами теста.
+    
+    """
+    try:
+        assert test_condition, error_message
+        result = "pass"
+        error_message = None
+    except AssertionError as e:
+        result = "fail"
+        error_message = str(e)
+
+    return {
+        "test_type": f"test_empty[{filename}]",
+        "actual_output": actual_output,
+        "expected_output": expected_output,
+        "result": result,
+        "error_message": error_message,
+        "timestamp": datetime.now().isoformat()
+    }
 
 @pytest.mark.parametrize('get_parameters', ['empty'], indirect=True)
 def test_empty(get_parameters):
@@ -17,29 +48,13 @@ def test_empty(get_parameters):
     """
     filename, parameters_expected, parameters_actual = get_parameters
 
-    expected = parameters_expected
-    actual = parameters_actual
+    expected_output = parameters_expected
+    actual_output = parameters_actual
     
-    test_condition = expected == actual
+    test_condition = expected_output == actual_output
     error_message = 'Значения не равны None'
 
-    try:
-        assert test_condition, error_message
-        result = "pass"
-        error_message = None
-    except AssertionError as e:
-        result = "fail"
-        error_message = str(e)
-
-    results.append({
-        "test_type": f"test_empty[{filename}]",
-        "input": actual,
-        "expected": expected,
-        "result": result,
-        "error_message": error_message,
-        "timestamp": datetime.now().isoformat()
-    })
-
+    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -61,29 +76,13 @@ def test_position_x(get_parameters):
     """
     filename, parameters_expected, parameters_actual = get_parameters
     
-    expected = parameters_expected['position'][0]
-    actual = parameters_actual['position'][0]
+    expected_output = parameters_expected['position'][0]
+    actual_output = parameters_actual['position'][0]
     
-    test_condition = expected == actual
+    test_condition = expected_output == actual_output
     error_message = 'Координаты X не совпадают'
 
-    try:
-        assert test_condition, error_message
-        result = "pass"
-        error_message = None
-    except AssertionError as e:
-        result = "fail"
-        error_message = str(e)
-
-    results.append({
-        "test_type": f"test_position_x[{filename}]",
-        "input": actual,
-        "expected": expected,
-        "result": result,
-        "error_message": error_message,
-        "timestamp": datetime.now().isoformat()
-    })
-
+    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -105,28 +104,13 @@ def test_position_y(get_parameters):
     """
     filename, parameters_expected, parameters_actual = get_parameters
     
-    expected = parameters_expected['position'][1]
-    actual = parameters_actual['position'][1]
+    expected_output = parameters_expected['position'][1]
+    actual_output = parameters_actual['position'][1]
     
-    test_condition = expected == actual
+    test_condition = expected_output == actual_output
     error_message = 'Координаты Y не совпадают'
 
-    try:
-        assert test_condition, error_message
-        result = "pass"
-        error_message = None
-    except AssertionError as e:
-        result = "fail"
-        error_message = str(e)
-
-    results.append({
-        "test_type": f"test_position_y[{filename}]",
-        "input": actual,
-        "expected": expected,
-        "result": result,
-        "error_message": error_message,
-        "timestamp": datetime.now().isoformat()
-    })
+    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -151,30 +135,15 @@ def test_std(get_parameters, accuracy):
     """
     filename, parameters_expected, parameters_actual = get_parameters
     accuracy_value = accuracy
-    expected = parameters_expected['std']
-    actual = parameters_actual['std']
+    expected_output = parameters_expected['std']
+    actual_output = parameters_actual['std']
 
-    test_condition = ((expected - actual) / expected <= (1 - accuracy_value)
+    test_condition = ((expected_output - actual_output) / expected_output <= (1 - accuracy_value)
                         or
-                        (expected - actual) <= (1 - accuracy_value))
+                        (expected_output - actual_output) <= (1 - accuracy_value))
     error_message = f'Среднеквадратичные отклонения не совпадают с достатчной точностью ({accuracy_value*100}% либо разница <0.05)'
     
-    try:
-        assert test_condition, error_message
-        result = "pass"
-        error_message = None
-    except AssertionError as e:
-        result = "fail"
-        error_message = str(e)
-
-    results.append({
-        "test_type": f"test_std[{filename}]",
-        "input": actual,
-        "expected": expected,
-        "result": result,
-        "error_message": error_message,
-        "timestamp": datetime.now().isoformat()
-    })
+    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -199,31 +168,15 @@ def test_dispersion(get_parameters, accuracy):
     """
     filename, parameters_expected, parameters_actual = get_parameters
     accuracy_value = accuracy
-    expected = parameters_expected['dispersion']
-    actual = parameters_actual['dispersion']
+    expected_output = parameters_expected['dispersion']
+    actual_output = parameters_actual['dispersion']
     
-    test_condition = ((expected - actual) / expected <= (1 - accuracy_value)
+    test_condition = ((expected_output - actual_output) / expected_output <= (1 - accuracy_value)
                         or
-                        (expected - actual) <= (1 - accuracy_value))
+                        (expected_output - actual_output) <= (1 - accuracy_value))
     error_message = f'Дисперсии не совпадают с достатчной точностью ({accuracy_value*100}% либо разница <0.05)'
 
-    try:
-        assert test_condition, error_message
-        result = "pass"
-        error_message = None
-    except AssertionError as e:
-        result = "fail"
-        error_message = str(e)
-
-    results.append({
-        "test_type": f"test_dispersion[{filename}]",
-        "input": actual,
-        "expected": expected,
-        "result": result,
-        "error_message": error_message,
-        "timestamp": datetime.now().isoformat()
-    })
-
+    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message
 
 
@@ -247,27 +200,11 @@ def test_std_dispersion_congruence(get_parameters):
     """
     filename, _, parameters_actual = get_parameters
     
-    actual = 'var == sigma**2' if parameters_actual['dispersion'] == parameters_actual['std']**2 else 'var <> sigma**2'
-    expected = 'var == sigma**2'
+    actual_output = 'var == sigma**2' if parameters_actual['dispersion'] == parameters_actual['std']**2 else 'var <> sigma**2'
+    expected_output = 'var == sigma**2'
 
-    test_condition = actual
+    test_condition = actual_output
     error_message = f'Дисперсия пятна не равна квадрату его среднеквадратичного отклонения'
 
-    try:
-        assert test_condition, error_message
-        result = "pass"
-        error_message = None
-    except AssertionError as e:
-        result = "fail"
-        error_message = str(e)
-
-    results.append({
-        "test_type": f"test_std_dispersion_congruence[{filename}]",
-        "input": actual,
-        "expected": expected,
-        "result": result,
-        "error_message": error_message,
-        "timestamp": datetime.now().isoformat()
-    })
-
+    tests_results.append(make_summary(tests_results, test_condition, error_message, filename, actual_output, expected_output))
     assert test_condition, error_message

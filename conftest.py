@@ -3,9 +3,9 @@ from datetime import datetime
 import pytest
 import yaml
 
-from image_processor import spot_parameters
+from image_processor import find_spot_parameters
 
-results = []
+tests_results = []
 
 @pytest.fixture()
 def accuracy():
@@ -18,11 +18,11 @@ def get_parameters(request):
 
     with open(f'Test Data/{filename}.yaml', 'r') as f:
         parameters_expected = yaml.safe_load(f)
-    parameters_actual = spot_parameters(f'Test Data/{filename}.png')
+    parameters_actual = find_spot_parameters(f'Test Data/{filename}.png')
 
     return filename, parameters_expected, parameters_actual
 
 
 def pytest_sessionfinish(session, exitstatus):
     with open('test_results.json', 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+        json.dump(tests_results, f, indent=2, ensure_ascii=False)
