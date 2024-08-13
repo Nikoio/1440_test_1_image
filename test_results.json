@@ -1,7 +1,7 @@
 [
   {
     "test_type": "test_empty[empty]",
-    "input": {
+    "actual_output": {
       "std": null,
       "dispersion": null,
       "position": [
@@ -9,7 +9,7 @@
         null
       ]
     },
-    "expected": {
+    "expected_output": {
       "std": null,
       "dispersion": null,
       "position": [
@@ -19,126 +19,126 @@
     },
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:45:59.952127"
+    "timestamp": "2024-08-13T15:25:52.748007"
   },
   {
-    "test_type": "test_position_x[center]",
-    "input": 0,
-    "expected": 0.0,
+    "test_type": "test_empty[center]",
+    "actual_output": 0,
+    "expected_output": 0.0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:45:59.955119"
+    "timestamp": "2024-08-13T15:25:52.750002"
   },
   {
-    "test_type": "test_position_x[x_shifted]",
-    "input": 25,
-    "expected": 25,
+    "test_type": "test_empty[x_shifted]",
+    "actual_output": 25,
+    "expected_output": 25,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:45:59.957113"
+    "timestamp": "2024-08-13T15:25:52.752993"
   },
   {
-    "test_type": "test_position_x[y_shifted]",
-    "input": 0,
-    "expected": 0,
+    "test_type": "test_empty[y_shifted]",
+    "actual_output": 0,
+    "expected_output": 0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:45:59.959108"
+    "timestamp": "2024-08-13T15:25:52.754988"
   },
   {
-    "test_type": "test_position_y[center]",
-    "input": 0,
-    "expected": 0.0,
+    "test_type": "test_empty[center]",
+    "actual_output": 0,
+    "expected_output": 0.0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:45:59.961103"
+    "timestamp": "2024-08-13T15:25:52.756983"
   },
   {
-    "test_type": "test_position_y[x_shifted]",
-    "input": 0,
-    "expected": 0,
+    "test_type": "test_empty[x_shifted]",
+    "actual_output": 0,
+    "expected_output": 0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:45:59.963097"
+    "timestamp": "2024-08-13T15:25:52.758978"
   },
   {
-    "test_type": "test_position_y[y_shifted]",
-    "input": 25,
-    "expected": 25,
+    "test_type": "test_empty[y_shifted]",
+    "actual_output": 25,
+    "expected_output": 25,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:45:59.965093"
+    "timestamp": "2024-08-13T15:25:52.760992"
   },
   {
-    "test_type": "test_std[center]",
-    "input": 9.60725989095793,
-    "expected": 10.0,
+    "test_type": "test_empty[center]",
+    "actual_output": 9.60725989095793,
+    "expected_output": 10.0,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:45:59.968084"
+    "timestamp": "2024-08-13T15:25:52.763964"
   },
   {
-    "test_type": "test_std[dot]",
-    "input": 0.0,
-    "expected": 0.01,
+    "test_type": "test_empty[dot]",
+    "actual_output": 0.0,
+    "expected_output": 0.01,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:45:59.969081"
+    "timestamp": "2024-08-13T15:25:52.765959"
   },
   {
-    "test_type": "test_std[plane]",
-    "input": 70.0053569151084,
-    "expected": 100.0,
+    "test_type": "test_empty[plane]",
+    "actual_output": 70.0053569151084,
+    "expected_output": 100.0,
     "result": "fail",
     "error_message": "Среднеквадратичные отклонения не совпадают с достатчной точностью (95.0% либо разница <0.05)\nassert np.False_",
-    "timestamp": "2024-08-12T20:45:59.972073"
+    "timestamp": "2024-08-13T15:25:52.767954"
   },
   {
-    "test_type": "test_dispersion[center]",
-    "input": 92.29944261240898,
-    "expected": 100.0,
+    "test_type": "test_empty[center]",
+    "actual_output": 92.29944261240898,
+    "expected_output": 100.0,
     "result": "fail",
     "error_message": "Дисперсии не совпадают с достатчной точностью (95.0% либо разница <0.05)\nassert np.False_",
-    "timestamp": "2024-08-12T20:46:00.026957"
+    "timestamp": "2024-08-13T15:25:52.818848"
   },
   {
-    "test_type": "test_dispersion[dot]",
-    "input": 0.0,
-    "expected": 0.0001,
+    "test_type": "test_empty[dot]",
+    "actual_output": 0.0,
+    "expected_output": 0.0001,
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:46:00.032911"
+    "timestamp": "2024-08-13T15:25:52.823805"
   },
   {
-    "test_type": "test_dispersion[plane]",
-    "input": 4900.7499968117145,
-    "expected": 10000.0,
+    "test_type": "test_empty[plane]",
+    "actual_output": 4900.7499968117145,
+    "expected_output": 10000.0,
     "result": "fail",
     "error_message": "Дисперсии не совпадают с достатчной точностью (95.0% либо разница <0.05)\nassert np.False_",
-    "timestamp": "2024-08-12T20:46:00.034823"
+    "timestamp": "2024-08-13T15:25:52.826796"
   },
   {
-    "test_type": "test_std_dispersion_congruence[center]",
-    "input": "var == sigma**2",
-    "expected": "var == sigma**2",
+    "test_type": "test_empty[center]",
+    "actual_output": "var == sigma**2",
+    "expected_output": "var == sigma**2",
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:46:00.040839"
+    "timestamp": "2024-08-13T15:25:52.831783"
   },
   {
-    "test_type": "test_std_dispersion_congruence[dot]",
-    "input": "var == sigma**2",
-    "expected": "var == sigma**2",
+    "test_type": "test_empty[dot]",
+    "actual_output": "var == sigma**2",
+    "expected_output": "var == sigma**2",
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:46:00.042826"
+    "timestamp": "2024-08-13T15:25:52.833778"
   },
   {
-    "test_type": "test_std_dispersion_congruence[plane]",
-    "input": "var == sigma**2",
-    "expected": "var == sigma**2",
+    "test_type": "test_empty[plane]",
+    "actual_output": "var == sigma**2",
+    "expected_output": "var == sigma**2",
     "result": "pass",
     "error_message": null,
-    "timestamp": "2024-08-12T20:46:00.044796"
+    "timestamp": "2024-08-13T15:25:52.836770"
   }
 ]
